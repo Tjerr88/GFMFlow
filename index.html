@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>GFM Flow — Standalone (Pre‑Op Safe)</title>
+  <title>Active Recovery Flow — Standalone (Pre‑Op Safe)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class'}</script>
   <style>
@@ -18,7 +18,7 @@
     <!-- Topbar -->
     <header class="sticky top-0 z-10 backdrop-blur bg-white/70 dark:bg-gray-900/60 border-b border-black/10 dark:border-white/10">
       <div class="max-w-2xl mx-auto px-3 h-12 flex items-center justify-between">
-        <h1 class="font-semibold">GFM Flow — Standalone</h1>
+        <h1 class="font-semibold">Active Recovery Flow — Standalone</h1>
         <div class="flex items-center gap-2">
           <button id="darkToggle" class="text-xs underline opacity-80">Dark</button>
         </div>
@@ -34,12 +34,12 @@
     <!-- Generator -->
     <section class="card p-3" id="generatorCard">
       <div class="flex flex-wrap gap-2 mb-3">
-        <button id="btnNew" class="btn bg-blue-600 text-white">Nieuwe GFM Flow</button>
+        <button id="btnNew" class="btn bg-blue-600 text-white">Nieuwe Flow</button>
         <button id="btnComplete" class="btn bg-green-600 text-white" title="Sla huidige flow op in geschiedenis">Complete</button>
         <button id="btnReset" class="btn bg-gray-600 text-white">Reset</button>
       </div>
       <div id="flowBox" class="space-y-2">
-        <p class="text-sm text-gray-500">Klik op <strong>Nieuwe GFM Flow</strong> om ~15–20 min aan zachte mobiliteit te krijgen.</p>
+        <p class="text-sm text-gray-500">Klik op <strong>Nieuwe Flow</strong> om ~10–20 min aan zachte mobiliteit te krijgen.</p>
       </div>
     </section>
 
@@ -79,42 +79,70 @@
 
     // ===== Safe GFM DB =====
     const DB = [
-      // Heupen
-      "Figure 4 Position → Figure 4 Lunge → Half Heel Sit",
-      "Z-position Switches → Z-position Side Roll",
-      "Prone to Get-Up Bridge (Hip Opener Sequence)",
-      // Schouders
+      // Heupen (8)
+      "Figure 4 Sit → Lunge Rock → Half Heel Sit",
+      "90/90 Hip Switch → Chest Fold → Side Rotation",
+      "Frog Rock → Heel Sit Stretch → Frog Rock",
+      "Half Kneeling Adductor Rockback → Lateral Shift → Return",
+      "Z Sit Switch (links/rechts) → Reach Arm Overhead",
+      "Z Sit → Side Roll → Prone Return",
+      "Glute Bridge → March → Mini Hip Lift",
+      "Seated Hip CARs (3–4 per kant, langzaam)",
+
+      // Schouders / Bovenrug (8)
       "Egyptian Arms (Seated → Pike → Prone)",
       "S-Movement (Seated → Pike → Prone)",
-      "Figure 8 in 6pt → Transition to 4pt",
-      "Crawl to Crab → Pike to Tabletop",
-      // Enkels
-      "Ankle Series (Up/Down, In/Out, Rotations)",
-      "Figure 8 with Toes and Ankle",
-      "Snail Crawl → Frog → Crab Flow",
-      // Wervelkolom & nek
-      "Supine Neck Rolls + Segmental Spine Rolls",
-      "Hand-on-Knee Rolls + Forward/Backward Rolling",
-      // Polsen
-      "Finger Waves → Hand Circles → Tea Pot (Wrist Flow)",
-      // Transitions / Extensions
-      "4pt Crawl → Push-Up → Pike → Squat → Crab",
-      "Shoulder Mobility Drill → Prone S Transition → 4pt Crawl",
-      "Half Heel Sit → Roll to Supine → Segmental Roll to Prone",
-      "6pt X-Lift → Prone Rotation → Crab Reach with Control",
-      // Veilig geïnspireerd op Animal Flow (laag intensief)
-      "Static Beast Hold → Dynamic Beast Crawl",
-      "Crab Reach (slow, controlled)",
-      "Underswitch from Beast to Crab",
-      "Scorpion Prep from Prone (hip rotation, no kick)",
-      "Side Travelling Ape (low squat lateral walk)",
-      "Loaded Beast → Wave Unload (slow)"
+      "Quadruped Thread the Needle → Mini Reach → Return",
+      "Half Kneeling Windmill → Slow Open/Close",
+      "Scapula Push-ups → Cat Stretch (McGill style)",
+      "Crawl Forward 3–4 stappen → Crab Return",
+      "Quadruped Thoracic Rotation (3–4 per zijde)",
+      "Supine Open Book → Reach → Return (3–4 per zijde)",
+
+      // Enkels / Onderbenen (5)
+      "Ankle Series: dorsiflexie/plantarflexie → cirkels → eights",
+      "Deep Squat Ankle Rock → Hakken liften → Tenen liften",
+      "Toe Sit (20–30s) → Wave Weight Forward/Back",
+      "Heel Sit (20–30s) → Soft Rock Side/Side",
+      "Squat Hold → Heen/weer shifting (binnenkant enkel)",
+
+      // Wervelkolom & Nek (7)
+      "Supine Neck Rolls → Segmental Spine Roll",
+      "Cat → Camel → Child’s Pose Return",
+      "Segmental Bridge (up/down) → Mini Reach overhead",
+      "Hand-on-Knee Roll (supine) → Forward/Backward Rock",
+      "Crocodile Breathing (4–6 ademcycli) → Mini Neck Turn",
+      "Quadruped Rockback → Thread the Needle → Return",
+      "Side-lying Windmill → Thoracic Extension",
+
+      // Polsen / Onderarmen (3)
+      "Finger Waves → Hand Circles → Palm Stretch",
+      "Wrist Rocks in 4pt (voor/achter → side/side)",
+      "Tea Pot Flow (flexie/extensie + rotatie)",
+
+      // Transities / Core Flow (6)
+      "4pt Crawl → Push-up (halve ROM) → Pike → Squat → Crab",
+      "Seated → Pike Fold → Prone S Roll",
+      "Half Heel Sit → Supine Roll → Prone Return",
+      "6pt X-Lift (arm/been lift) → Prone Rotation → Crab Reach",
+      "Tabletop → Hip Lift → Reach Overhead → Return",
+      "Dead Bug Variatie → Heel Tap → Cross Reach",
+
+      // Veilige Animal Flow geïnspireerd (8)
+      "Static Beast Hold (20–30s) → Dynamic Beast Crawl (4–6 steps)",
+      "Underswitch from Beast to Crab (3–4 per kant)",
+      "Crab Reach (slow, controlled, 3–4 per kant)",
+      "Loaded Beast → Wave Unload → Return",
+      "Scorpion Prep (prone) → Hip Rotation → Reset (geen kick)",
+      "Side Travelling Ape (low squat, 2–3 stappen per kant)",
+      "Crab Toe Touch (3–4 per kant) → terug naar Crab",
+      "Beast → Step Under → Return"
     ];
 
     function shuffle(a){const x=a.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]];}return x}
     function generateFlow(){
       const picks = shuffle(DB).slice(0,7);
-      const lines = ["GFM Flow (~15–20 min):",""].concat(picks.map((s,i)=>`${i+1}) ${s}`));
+      const lines = ["Active Recovery Flow (~10–20 min):",""].concat(picks.map((s,i)=>`${i+1}) ${s}`));
       return lines;
     }
 
@@ -146,7 +174,7 @@
         return `
           <div class="p-3 card mb-2">
             <div class="text-sm flex flex-wrap gap-2 mb-1">
-              <span class="font-medium">GFM Flow</span>
+              <span class="font-medium">Active Recovery Flow</span>
               <span>• ${when}</span>
               ${time?`<span>${time}</span>`:''}
             </div>
@@ -160,7 +188,7 @@
     const CKEY = 'current:gfm';
     function ensureCurrent(){
       let cur = lsGet(CKEY,null);
-      if(!cur){ cur = { lines: generateFlow(), meta:{ modality:'recovery', choice:'GFM Flow', date:new Date().toISOString() } };
+      if(!cur){ cur = { lines: generateFlow(), meta:{ modality:'recovery', choice:'Active Recovery Flow', date:new Date().toISOString() } };
         lsSet(CKEY,cur);
       }
       return cur;
@@ -173,12 +201,12 @@
 
     // Buttons
     document.getElementById('btnNew').addEventListener('click',()=>{
-      const cur = { lines: generateFlow(), meta:{ modality:'recovery', choice:'GFM Flow', date:new Date().toISOString() } };
+      const cur = { lines: generateFlow(), meta:{ modality:'recovery', choice:'Active Recovery Flow', date:new Date().toISOString() } };
       lsSet(CKEY,cur); renderFlow(cur.lines);
     });
     document.getElementById('btnReset').addEventListener('click',()=>{
       try{localStorage.removeItem(CKEY)}catch(e){}
-      renderFlow(["","Flow gereset. Klik op \"Nieuwe GFM Flow\" om te starten."]); timerStop(); timerSec=0; timerTick();
+      renderFlow(["","Flow gereset. Klik op \"Nieuwe Flow\" om te starten."]); timerStop(); timerSec=0; timerTick();
     });
 
     document.getElementById('btnComplete').addEventListener('click',()=>{
